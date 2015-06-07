@@ -58,3 +58,6 @@ docs/_build/
 target/
 
 /PythonApplication1/_data
+
+*.suo
+PythonApplication1.v12.suo
