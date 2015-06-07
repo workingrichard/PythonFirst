@@ -11,7 +11,7 @@
 
 import mysql.connector
 #from mysql.connector import (connection)
-
+#import MySQLdb
 
 #def main():
 #    pass
@@ -20,12 +20,22 @@ import mysql.connector
 #    main()
 
 def ReadURLTask():
-    config = {
-        'user': 'root'
-    }
-    #conn= mysql.connector.connect(**config)
-    conn = mysql.connector.MySQLConnection(user = 'root', pass = '12345', host = 'localhost', database = 'test')
 
+    conn = mysql.connector.MySQLConnection(user = 'root', password = '12345', host = 'localhost', database = 'mytask')
+    cursor = conn.cursor()
+    cursor.execute("select version();")
+    data = cursor.fetchone()
+    print("DB version: " + data[0])
 
+    cursor.execute("select * from urltask")
+    for x in cursor.fetchall():
+        for y in x:
+            print(y)
+
+    cursor.execute("select id, url from urltask")
+    for (id, url) in cursor:
+        print(str(id) + " : " + url)
+    
+    conn.close()
 
     return

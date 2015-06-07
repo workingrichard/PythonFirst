@@ -1,5 +1,6 @@
 import os;
 import modFile
+import AccessMariaDB
 
 print('Hello World')
 
@@ -15,4 +16,7 @@ for s in contents:
 print("testing yield return....");
 for s in modFile.readFileYield(fname):
     print(s.replace("\r\n", "").replace("\n",""))
+
+AccessMariaDB.ReadURLTask()
+
 

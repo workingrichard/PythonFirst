@@ -22,6 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AccessMariaDB.py" />
     <Compile Include="modFile.py">
       <SubType>Code</SubType>
     </Compile>
